@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  database_mysql:
+    container_name: database_mysql
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    volumes:
+      - my_db:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  docker-demo:
+    container_name: docker_demo
+    build: ./docker-demo
+    ports:
+      - '8080:8080'
+    depends_on:
+      - database_mysql
+
+volumes:
+  my_db:
