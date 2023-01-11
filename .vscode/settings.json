@@ -6,5 +6,6 @@
         "editor.tabSize": 2
     },
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 2000
+    "files.autoSaveDelay": 2000,
+    "java.configuration.updateBuildConfiguration": "automatic"
 }
