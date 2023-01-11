@@ -7,5 +7,6 @@
     },
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 2000,
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "maven.executable.path": "/home/oleksandr/apache-maven-3.8.7/bin/mvn"
 }
