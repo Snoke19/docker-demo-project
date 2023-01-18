@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch DockerDemo2Application",
+            "request": "launch",
+            "mainClass": "com.docker.dockerdemo2.DockerDemo2Application",
+            "projectName": "docker-demo2"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-DockerDemoApplication<docker-demo>",
             "request": "launch",
             "cwd": "${workspaceFolder}",

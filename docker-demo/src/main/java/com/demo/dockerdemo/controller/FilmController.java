@@ -1,10 +1,8 @@
 package com.demo.dockerdemo.controller;
 
-import com.demo.dockerdemo.repository.FilmRepository;
-
+import com.demo.dockerdemo.service.FilmService;
 import lombok.extern.slf4j.Slf4j;
-
-import com.demo.dockerdemo.model.Film;
+import com.demo.dockerdemo.dto.FilmDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,16 +12,16 @@ import java.util.List;
 @RestController
 public class FilmController {
 
-  private final FilmRepository filmRepository;
+  private final FilmService filmService;
 
-  public FilmController(FilmRepository filmRepository) {
-    this.filmRepository = filmRepository;
+  public FilmController(FilmService filmService) {
+    this.filmService = filmService;
   }
 
   @GetMapping("/films")
-  public List<Film> getActors() {
+  public List<FilmDto> getActors() {
 
-    List<Film> films = this.filmRepository.findAll();
+    List<FilmDto> films = this.filmService.getFilms();
       
     log.info("Get all films. size: {}", films.size());
 

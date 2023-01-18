@@ -24,5 +24,5 @@ public class Film {
   private String description;
 
   @Column(name  = "language_id")
-  private int languageId;
+  private long languageId;
 }

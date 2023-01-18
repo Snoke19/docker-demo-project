@@ -12,13 +12,20 @@ services:
     ports:
       - "3306:3306"
 
-  docker-demo:
+  docker_demo:
     container_name: docker_demo
     build: ./docker-demo
     ports:
       - '8080:8080'
     depends_on:
       - database_mysql
+
+  dockerdemo2:
+    container_name: docker_demo2
+    build: ./docker-demo2
+    depends_on:
+      - database_mysql
+      - docker_demo
 
 volumes:
   my_db:
