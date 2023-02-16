@@ -1,4 +1,4 @@
-package com.demo.dockerdemo.service;
+package com.demo.filmservice.service;
 
 import java.util.HashMap;
 import java.util.List;
@@ -8,10 +8,10 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.demo.dockerdemo.dto.FilmDto;
-import com.demo.dockerdemo.dto.ReviewDto;
-import com.demo.dockerdemo.model.Film;
-import com.demo.dockerdemo.repository.FilmRepository;
+import com.demo.filmservice.dto.FilmDto;
+import com.demo.filmservice.dto.ReviewDto;
+import com.demo.filmservice.model.Film;
+import com.demo.filmservice.repository.FilmRepository;
 
 @Service
 public class FilmServiceImpl implements FilmService {

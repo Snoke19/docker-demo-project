@@ -1,4 +1,4 @@
-package com.demo.dockerdemo.model;
+package com.demo.filmservice.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package com.demo.dockerdemo.dto;
+package com.demo.filmservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,10 +9,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class FilmDto {
-  
-  private long idFilm;
-  private String name;
-  private String description;
-  private ReviewDto review;
+public class ReviewDto {
+
+  private long id;
+  private String review;
+  private int rating;
 }

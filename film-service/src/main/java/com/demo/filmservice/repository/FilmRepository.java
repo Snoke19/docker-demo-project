@@ -1,7 +1,7 @@
-package com.demo.dockerdemo.repository;
+package com.demo.filmservice.repository;
 
 
-import com.demo.dockerdemo.model.Film;
+import com.demo.filmservice.model.Film;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface FilmRepository extends JpaRepository<Film, Long> {

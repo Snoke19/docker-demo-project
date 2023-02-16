@@ -1,8 +1,8 @@
-package com.demo.dockerdemo.service;
+package com.demo.filmservice.service;
 
 import java.util.List;
 
-import com.demo.dockerdemo.dto.FilmDto;
+import com.demo.filmservice.dto.FilmDto;
 
 public interface FilmService {
 

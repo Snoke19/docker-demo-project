@@ -1,8 +1,8 @@
-package com.demo.dockerdemo.controller;
+package com.demo.filmservice.controller;
 
-import com.demo.dockerdemo.service.FilmService;
+import com.demo.filmservice.service.FilmService;
 import lombok.extern.slf4j.Slf4j;
-import com.demo.dockerdemo.dto.FilmDto;
+import com.demo.filmservice.dto.FilmDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
