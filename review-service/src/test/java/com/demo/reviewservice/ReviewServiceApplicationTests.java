@@ -1,10 +1,10 @@
-package com.docker.dockerdemo2;
+package com.demo.reviewservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DockerDemo2ApplicationTests {
+class ReviewServiceApplicationTests {
 
     @Test
     void contextLoads() {

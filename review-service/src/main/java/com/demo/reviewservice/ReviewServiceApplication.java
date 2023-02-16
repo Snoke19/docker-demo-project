@@ -1,13 +1,13 @@
-package com.docker.dockerdemo2;
+package com.demo.reviewservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DockerDemo2Application {
+public class ReviewServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DockerDemo2Application.class, args);
+        SpringApplication.run(ReviewServiceApplication.class, args);
     }
 
 }
