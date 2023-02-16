@@ -14,5 +14,5 @@ public class FilmDto {
   private long idFilm;
   private String name;
   private String description;
-  private LanguageDto language;
+  private ReviewDto review;
 }

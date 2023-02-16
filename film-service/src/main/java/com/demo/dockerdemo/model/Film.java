@@ -23,6 +23,6 @@ public class Film {
 
   private String description;
 
-  @Column(name  = "language_id")
-  private long languageId;
+  @Column(name  = "review_id")
+  private long reviewId;
 }
