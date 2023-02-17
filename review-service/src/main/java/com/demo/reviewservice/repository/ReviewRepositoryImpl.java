@@ -2,13 +2,15 @@ package com.demo.reviewservice.repository;
 
 import com.demo.reviewservice.conroller.RecordNotFoundException;
 import com.demo.reviewservice.model.ReviewDto;
+import com.opencsv.CSVParser;
+import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderBuilder;
 import com.opencsv.exceptions.CsvException;
 import org.springframework.stereotype.Component;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
 
 @Component
 public class ReviewRepositoryImpl implements ReviewRepository {
@@ -17,11 +19,17 @@ public class ReviewRepositoryImpl implements ReviewRepository {
   public ReviewDto findById(long reviewId) {
 
     try {
-      CSVReader reader = new CSVReader(new FileReader("./review-service/reviews.csv"));
 
-      while (reader.readNext() != null) {
-        String[] record = reader.readNext();
-        System.out.println(Arrays.toString(record));
+      CSVParser csvParser = new CSVParserBuilder()
+        .withSeparator(',')
+        .withIgnoreQuotations(true)
+        .build();
+      CSVReader reader = new CSVReaderBuilder(new FileReader("reviews.csv"))
+        .withCSVParser(csvParser)
+        .build();
+
+      String[] record;
+      while ((record = reader.readNext()) != null) {
         if (Long.parseLong(record[0]) == reviewId) {
           ReviewDto review = new ReviewDto();
           review.setId(Long.parseLong(record[0]));
