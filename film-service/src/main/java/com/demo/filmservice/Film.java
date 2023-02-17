@@ -1,4 +1,4 @@
-package com.demo.filmservice.model;
+package com.demo.filmservice;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

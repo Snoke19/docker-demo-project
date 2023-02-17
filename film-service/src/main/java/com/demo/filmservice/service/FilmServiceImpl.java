@@ -1,18 +1,19 @@
 package com.demo.filmservice.service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
-import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
-
+import com.demo.filmservice.Film;
+import com.demo.filmservice.FilmRepository;
 import com.demo.filmservice.dto.FilmDto;
 import com.demo.filmservice.dto.ReviewDto;
-import com.demo.filmservice.model.Film;
-import com.demo.filmservice.repository.FilmRepository;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Slf4j
 @Service
 public class FilmServiceImpl implements FilmService {
 
@@ -42,10 +43,13 @@ public class FilmServiceImpl implements FilmService {
 
   private ReviewDto findReviewById(long id) {
 
-    Map<String, Long> requestParams = new HashMap<>();
-    requestParams.put("id", id);
+    UriComponents uriComponents = UriComponentsBuilder
+      .fromUriString("/review")
+      .queryParam("id", id)
+      .encode()
+      .build();
 
-    ReviewDto review = this.restTemplateDockerDemo2.getForObject("/review", ReviewDto.class, requestParams);
+    ReviewDto review = this.restTemplateDockerDemo2.getForObject(uriComponents.toUri().toString(), ReviewDto.class);
 
     return review == null ? new ReviewDto() : review;
   }
