@@ -16,3 +16,5 @@ Test endpoints after run:
 ```http request
 http://localhost:8080/films
 ```
+
+Study course: https://www.udemy.com/course/docker-kubernetes-the-practical-guide/
