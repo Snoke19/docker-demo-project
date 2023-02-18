@@ -1,31 +1,46 @@
 version: "3.8"
 services:
   database_mysql:
-    container_name: database_mysql
+    container_name: db-mysql
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password123
+      MYSQL_DATABASE: film_db
     volumes:
       - my_db:/var/lib/mysql
+      - ${PWD}/schema.sql:/docker-entrypoint-initdb.d/set.sql
+    restart: always
+    networks:
+      - film_network
+  film_service:
+    container_name: film-service
+    build: ./film-service
+    environment:
+      MYSQL_DATABASE: film_db
+      CONTAINER_NAME_DATABASE: db-mysql
+      MYSQL_PASSWORD: password123
+      MYSQL_USER: user
     ports:
-      - "3306:3306"
-
-  docker_demo:
-    container_name: docker_demo
-    build: ./docker-demo
-    ports:
-      - '8080:8080'
+      - "8080:8080"
+    networks:
+      - film_network
     depends_on:
       - database_mysql
-
-  dockerdemo2:
-    container_name: docker_demo2
-    build: ./docker-demo2
+  review_service:
+    container_name: review-service
+    build:
+      context: ./
+      dockerfile: ./review-service/Dockerfile
+    volumes:
+      - ${PWD}/reviews.csv:/app/reviews.csv
+    networks:
+      - film_network
     depends_on:
-      - database_mysql
-      - docker_demo
+      - film_service
 
 volumes:
   my_db:
+networks:
+  film_network:
