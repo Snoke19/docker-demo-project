@@ -1,7 +1,7 @@
 package com.demo.reviewservice.repository;
 
-import com.demo.reviewservice.conroller.RecordNotFoundException;
-import com.demo.reviewservice.model.ReviewDto;
+import com.demo.reviewservice.RecordNotFoundException;
+import com.demo.reviewservice.ReviewDto;
 import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;

@@ -1,8 +1,6 @@
 package com.demo.reviewservice.repository;
 
-import com.demo.reviewservice.model.ReviewDto;
-
-import java.util.List;
+import com.demo.reviewservice.ReviewDto;
 
 public interface ReviewRepository {
 

@@ -1,4 +1,4 @@
-package com.demo.reviewservice.model;
+package com.demo.reviewservice;
 
 import lombok.Data;
 

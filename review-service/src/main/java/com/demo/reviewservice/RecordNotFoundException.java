@@ -1,4 +1,4 @@
-package com.demo.reviewservice.conroller;
+package com.demo.reviewservice;
 
 public class RecordNotFoundException extends RuntimeException {
 

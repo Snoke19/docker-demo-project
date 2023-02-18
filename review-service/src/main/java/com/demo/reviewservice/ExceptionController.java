@@ -1,4 +1,4 @@
-package com.demo.reviewservice.conroller;
+package com.demo.reviewservice;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
